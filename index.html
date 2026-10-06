@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Space Art Crew</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+
+    <div class="top-bar">
+        <span>✦ Handmade with love</span>
+        <span>Free delivery for orders over 150,000₮</span>
+        <span>✦ Made in Mongolia</span>
+    </div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <a href="#home" class="logo">
+            <span class="logo-star">✦</span>
+
+            <div>
+                <strong>SPACE ART</strong>
+                <small>CREW</small>
+            </div>
+        </a>
+
+        <nav class="nav">
+
+            <a href="#shop">Shop</a>
+            <a href="#catalog">Catalog</a>
+            <a href="#workshop">Workshop</a>
+            <a href="#events">Events</a>
+            <a href="#about">Introduce</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="search-btn" onclick="focusSearch()">
+                ⌕
+            </button>
+
+            <button class="cart-btn" onclick="openCart()">
+                🛒
+                <span id="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    SPACE ART CREW
+                </span>
+
+                <h1>
+                    Art that makes
+                    <span>your space</span>
+                    special.
+                </h1>
+
+                <p>
+                    Монголд урласан гар хийцийн керамик,
+                    интерьерийн жижиг урлаг болон
+                    онцгой бэлгүүд.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#shop" class="btn btn-dark">
+                        Shop Collection
+                    </a>
+
+                    <a href="#workshop" class="btn btn-light">
+                        Join Workshop
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1000&q=80"
+                    alt="Space Art pottery"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATALOG ================= -->
+
+        <section id="catalog" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">EXPLORE</span>
+
+                    <h2>
+                        Our Catalog
+                    </h2>
+                </div>
+
+                <p>
+                    Таны орон зайд зориулсан
+                    жижигхэн урлаг.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <button onclick="filterProducts('all')" class="category-card">
+                    <span>01</span>
+                    <h3>All Art</h3>
+                    <p>Бүх бүтээгдэхүүн</p>
+                </button>
+
+                <button onclick="filterProducts('ceramics')" class="category-card">
+                    <span>02</span>
+                    <h3>Ceramics</h3>
+                    <p>Керамик урлал</p>
+                </button>
+
+                <button onclick="filterProducts('home')" class="category-card">
+                    <span>03</span>
+                    <h3>Home Art</h3>
+                    <p>Гэрийн интерьер</p>
+                </button>
+
+                <button onclick="filterProducts('gift')" class="category-card">
+                    <span>04</span>
+                    <h3>Gifts</h3>
+                    <p>Онцгой бэлэг</p>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SHOP ================= -->
+
+        <section id="shop" class="section shop-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">SHOP</span>
+
+                    <h2>
+                        Featured Art
+                    </h2>
+                </div>
+
+                <p>
+                    Гар бүрийн хөдөлмөрөөр
+                    бүтээгдсэн бүтээлүүд.
+                </p>
+
+            </div>
+
+
+            <div class="shop-tools">
+
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Бүтээгдэхүүн хайх..."
+                    oninput="searchProducts()"
+                >
+
+                <select
+                    id="category-select"
+                    onchange="filterProducts(this.value)"
+                >
+
+                    <option value="all">
+                        Бүх ангилал
+                    </option>
+
+                    <option value="ceramics">
+                        Ceramics
+                    </option>
+
+                    <option value="home">
+                        Home Art
+                    </option>
+
+                    <option value="gift">
+                        Gifts
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div id="product-grid" class="product-grid"></div>
+
+        </section>
+
+
+        <!-- ================= WORKSHOP ================= -->
+
+        <section id="workshop" class="dark-section">
+
+            <div class="workshop-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1565193298357-c5b8f1b0c3a3?auto=format&fit=crop&w=1000&q=80"
+                    alt="Ceramic workshop"
+                >
+
+            </div>
+
+            <div class="workshop-content">
+
+                <span class="eyebrow">
+                    WORKSHOP
+                </span>
+
+                <h2>
+                    Create something
+                    with your own hands.
+                </h2>
+
+                <p>
+                    Керамик урлалын анхан шатны
+                    workshop-д оролцож өөрийн
+                    гараар бүтээлээ хийгээрэй.
+                </p>
+
+                <button
+                    class="btn btn-white"
+                    onclick="openWorkshop()"
+                >
+                    Workshop үзэх
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EVENTS ================= -->
+
+        <section id="events" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        EVENTS
+                    </span>
+
+                    <h2>
+                        Upcoming Events
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="event-card">
+
+                <div class="event-date">
+                    <strong>25</strong>
+                    <span>OCT</span>
+                </div>
+
+                <div class="event-info">
+
+                    <span class="eyebrow">
+                        CERAMIC NIGHT
+                    </span>
+
+                    <h3>
+                        Clay & Coffee Evening
+                    </h3>
+
+                    <p>
+                        Найз нөхөдтэйгөө хамт
+                        керамик бүтээл хийж,
+                        кофе ууж, оройн цагийг
+                        бүтээлч өнгөрүүлээрэй.
+                    </p>
+
+                </div>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="openWorkshop()"
+                >
+                    Бүртгүүлэх
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="about-section">
+
+            <div class="about-content">
+
+                <span class="eyebrow">
+                    INTRODUCE
+                </span>
+
+                <h2>
+                    Made slowly.
+                    Made meaningfully.
+                </h2>
+
+                <p>
+                    Space Art Crew бол Монголд
+                    гар аргаар бүтээгдэхүүн урлаж,
+                    өдөр тутмын амьдралд урлагийг
+                    ойртуулахыг зорьдог бүтээлч хамт олон.
+                </p>
+
+                <p>
+                    Бидний бүтээл бүр багахан
+                    ялгаатай, төгс бус боловч
+                    хүний гарын дулаан мэдрэмжийг
+                    хадгалдаг.
+                </p>
+
+            </div>
+
+
+            <div class="values-grid">
+
+                <div class="value-card">
+                    <span>01</span>
+                    <h3>Handmade</h3>
+                    <p>Бүтээл бүрийг гараар урлана.</p>
+                </div>
+
+                <div class="value-card">
+                    <span>02</span>
+                    <h3>Local</h3>
+                    <p>Монголд бүтээж, Монголыг дэмжинэ.</p>
+                </div>
+
+                <div class="value-card">
+                    <span>03</span>
+                    <h3>Meaningful</h3>
+                    <p>Зөвхөн эд зүйл биш, мэдрэмж бүтээнэ.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TESTIMONIALS ================= -->
+
+        <section class="section testimonials">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">
+                        LOVE FROM OUR COMMUNITY
+                    </span>
+
+                    <h2>
+                        What people say
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="testimonial-grid">
+
+                <div class="testimonial">
+                    <div>★★★★★</div>
+
+                    <p>
+                        “Бүтээл нь зурагнаасаа ч
+                        илүү гоё байсан.”
+                    </p>
+
+                    <strong>
+                        — Anu
+                    </strong>
+                </div>
+
+                <div class="testimonial">
+                    <div>★★★★★</div>
+
+                    <p>
+                        “Workshop үнэхээр
+                        гоё, тайван уур амьсгалтай.”
+                    </p>
+
+                    <strong>
+                        — Nomin
+                    </strong>
+                </div>
+
+                <div class="testimonial">
+                    <div>★★★★★</div>
+
+                    <p>
+                        “Бэлэг авахад хамгийн
+                        гоё сонголтуудын нэг.”
+                    </p>
+
+                    <strong>
+                        — Tugs
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact" class="contact-section">
+
+            <div>
+
+                <span class="eyebrow">
+                    CONTACT
+                </span>
+
+                <h2>
+                    Let's create
+                    something beautiful.
+                </h2>
+
+            </div>
+
+            <div class="contact-info">
+
+                <p>
+                    📧 Totoroo54@gmail.com
+                </p>
+
+                <p>
+                    📍 Ulaanbaatar, Mongolia
+                </p>
+
+                <p>
+                    ✦ Space Art Crew
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NEWSLETTER ================= -->
+
+        <section class="newsletter">
+
+            <span class="eyebrow">
+                STAY IN THE LOOP
+            </span>
+
+            <h2>
+                Join our creative world.
+            </h2>
+
+            <p>
+                Шинэ бүтээл, workshop,
+                event-ийн мэдээллийг аваарай.
+            </p>
+
+            <form onsubmit="subscribeNewsletter(event)">
+
+                <input
+                    type="email"
+                    id="newsletter-email"
+                    placeholder="Таны email"
+                    required
+                >
+
+                <button class="btn btn-dark">
+                    Subscribe
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            <strong>SPACE ART</strong>
+            <span>CREW</span>
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+                <h4>EXPLORE</h4>
+
+                <a href="#workshop">Workshop</a>
+                <a href="#events">Events</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div>
+                <h4>HELP</h4>
+
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+                <a href="#">FAQ</a>
+                <a href="#shop">Order</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Space Art Crew
+            </span>
+
+            <span>
+                Made with ♡ in Mongolia
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================================= -->
+    <!-- CART MODAL -->
+    <!-- ================================================= -->
+
+    <div id="cart-modal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+            <span class="eyebrow">
+                YOUR CART
+            </span>
+
+            <h2>
+                Shopping Cart
+            </h2>
+
+            <div id="cart-items"></div>
+
+            <div class="cart-total">
+
+                <span>
+                    Нийт
+                </span>
+
+                <strong id="cart-total">
+                    0₮
+                </strong>
+
+            </div>
+
+            <div class="cart-actions">
+
+                <button
+                    class="btn btn-light"
+                    onclick="clearCart()"
+                >
+                    Clear
+                </button>
+
+                <button
+                    class="btn btn-dark"
+                    onclick="openOrderForm()"
+                >
+                    Order
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ORDER MODAL -->
+    <!-- ================================================= -->
+
+    <div id="order-modal" class="modal">
+
+        <div class="modal-content order-content">
+
+            <button
+                class="modal-close"
+                onclick="closeOrderForm()"
+            >
+                ×
+            </button>
+
+            <span class="eyebrow">
+                ORDER
+            </span>
+
+            <h2>
+                Захиалга өгөх
+            </h2>
+
+            <form
+                id="order-form"
+                onsubmit="submitOrder(event)"
+            >
+
+                <!-- CUSTOMER INFO -->
+
+                <div class="form-group">
+
+                    <label>
+                        Нэр
+                    </label>
+
+                    <input
+                        id="customer-name"
+                        type="text"
+                        placeholder="Таны нэр"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Утас
+                    </label>
+
+                    <input
+                        id="customer-phone"
+                        type="tel"
+                        placeholder="99112233"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Хүргэлтийн хаяг
+                    </label>
+
+                    <textarea
+                        id="customer-address"
+                        placeholder="Хаягаа бичнэ үү..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Нэмэлт мэдээлэл
+                    </label>
+
+                    <textarea
+                        id="customer-message"
+                        placeholder="Нэмэлт хүсэлт байвал..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- ========================================= -->
+                <!-- PAYMENT -->
+                <!-- PAYMENT НЬ ORDER FORM ДОТОР БАЙНА -->
+                <!-- ========================================= -->
+
+                <div class="payment-box">
+
+                    <span class="eyebrow">
+                        PAYMENT
+                    </span>
+
+                    <h3>
+                        💳 Төлбөрийн мэдээлэл
+                    </h3>
+
+                    <p>
+                        <strong>
+                            Хаан Банк
+                        </strong>
+                    </p>
+
+                    <div class="account-number">
+                        5599083794
+                    </div>
+
+                    <p>
+                        Захиалгын нийт дүнг дээрх
+                        данс руу шилжүүлнэ үү.
+                    </p>
+
+                    <label>
+                        Гүйлгээний баримт
+                    </label>
+
+                    <input
+                        id="payment-receipt"
+                        type="file"
+                        accept="image/*,.pdf"
+                        required
+                    >
+
+                    <small>
+                        JPG, PNG эсвэл PDF файл оруулна уу.
+                    </small>
+
+                </div>
+
+
+                <!-- ORDER TOTAL -->
+
+                <div class="order-summary">
+
+                    <span>
+                        Захиалгын дүн
+                    </span>
+
+                    <strong id="order-total">
+                        0₮
+                    </strong>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="btn btn-dark full-btn"
+                >
+                    Захиалга баталгаажуулах
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- WORKSHOP MODAL -->
+    <!-- ================================================= -->
+
+    <div id="workshop-modal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                onclick="closeWorkshop()"
+            >
+                ×
+            </button>
+
+            <span class="eyebrow">
+                WORKSHOP
+            </span>
+
+            <h2>
+                Ceramic Workshop
+            </h2>
+
+            <p>
+                Өөрийн гараар керамик бүтээл
+                хийх 2 цагийн workshop.
+            </p>
+
+            <div class="workshop-details">
+
+                <p>
+                    📅 Бямба гараг
+                </p>
+
+                <p>
+                    ⏰ 14:00 – 16:00
+                </p>
+
+                <p>
+                    👥 6 хүртэл хүн
+                </p>
+
+                <p>
+                    💰 65,000₮ / хүн
+                </p>
+
+            </div>
+
+            <button
+                class="btn btn-dark full-btn"
+                onclick="registerWorkshop()"
+            >
+                Workshop-д бүртгүүлэх
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
